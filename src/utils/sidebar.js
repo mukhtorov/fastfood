@@ -1,4 +1,5 @@
 import Generic from '../page/Generic';
+import Buyurtmalar from '../page/Buyurtmalar';
 
 // Icons
 import { ReactComponent as buyurtma } from '../assets/icons/buyurtmalar.svg';
@@ -13,15 +14,15 @@ import { ReactComponent as mijozlar } from '../assets/icons/mijozlar.svg';
 export const sidebar = [
   {
     id: 1,
-    path: 'buyurtmalar',
+    path: '/',
     title: 'Buyurtmalar',
-    Component: Generic,
+    Component: Buyurtmalar,
     Icon: buyurtma,
     hidden: false,
   },
   {
     id: 2,
-    path: 'maxsulotlar',
+    path: '/maxsulotlar',
     title: 'Maxsulotlar',
     Component: Generic,
     Icon: mahsulotlar,
@@ -29,7 +30,7 @@ export const sidebar = [
   },
   {
     id: 3,
-    path: 'katigoriya',
+    path: '/katigoriya',
     title: 'Katigoriya',
     Component: Generic,
     Icon: kategoriya,
@@ -37,7 +38,7 @@ export const sidebar = [
   },
   {
     id: 4,
-    path: 'filiallar',
+    path: '/filiallar',
     title: 'Filiallar',
     Component: Generic,
     Icon: filial,
@@ -45,7 +46,7 @@ export const sidebar = [
   },
   {
     id: 5,
-    path: 'mijozlar',
+    path: '/mijozlar',
     title: 'Mijozlar',
     Component: Generic,
     Icon: mijozlar,
@@ -53,7 +54,7 @@ export const sidebar = [
   },
   {
     id: 6,
-    path: 'hisobot',
+    path: '/hisobot',
     title: 'Hisobot',
     Component: Generic,
     Icon: hisobot,
@@ -61,7 +62,7 @@ export const sidebar = [
   },
   {
     id: 7,
-    path: 'hodimlar',
+    path: '/hodimlar',
     title: 'Hodimlar',
     Component: Generic,
     Icon: hodimlar,
@@ -69,7 +70,7 @@ export const sidebar = [
   },
   {
     id: 8,
-    path: 'katalog',
+    path: '/katalog',
     title: 'Katalog',
     Component: Generic,
     Icon: settings,
