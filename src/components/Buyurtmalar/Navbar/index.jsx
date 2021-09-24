@@ -8,6 +8,7 @@ import {
   Tab,
   Tilte,
   Toggle,
+  ToggleClone,
   Wrapper,
 } from './style';
 
@@ -16,11 +17,25 @@ export const Navbar = () => {
   const [isTabActive, setIsTabActive] = useState(true);
   return (
     <Container>
-      <Wrapper align>
+      <Wrapper align order='first'>
         <Plus />
         <Tilte>Yangi buyurtma qoshish</Tilte>
+        <ToggleClone>
+          <IconsWrapper
+            active={isTabActive}
+            onClick={() => setIsTabActive(true)}
+          >
+            <MenuV />
+          </IconsWrapper>
+          <IconsWrapper
+            active={!isTabActive}
+            onClick={() => setIsTabActive(false)}
+          >
+            <MenuH />
+          </IconsWrapper>
+        </ToggleClone>
       </Wrapper>
-      <Wrapper>
+      <Wrapper order='second'>
         <Tab>
           <Tab.Item
             onClick={() => setIsActive('Yangi')}
@@ -48,7 +63,7 @@ export const Navbar = () => {
           </Tab.Item>
         </Tab>
       </Wrapper>
-      <Wrapper align>
+      <Wrapper align order='third'>
         <Toggle>
           <IconsWrapper
             active={isTabActive}

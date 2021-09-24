@@ -3,8 +3,36 @@ import { ReactComponent as plus } from '../../../assets/icons/plus.svg';
 import { ReactComponent as menuV } from '../../../assets/icons/menuV.svg';
 import { ReactComponent as menuH } from '../../../assets/icons/menuH.svg';
 
+const getOrder = ({ order }) => {
+  switch (order) {
+    case 'first':
+      return 1;
+    case 'second':
+      return 3;
+    case 'third':
+      return 2;
+    default:
+      return 1;
+  }
+};
+
+const getFlex = ({ order }) => {
+  switch (order) {
+    case 'first':
+      return 1;
+    case 'second':
+      return 1;
+    case 'third':
+      return 2;
+    default:
+      return 1;
+  }
+};
 export const Container = styled.div`
   display: flex;
+  @media (max-width: 1900px) {
+    flex-direction: column;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -15,6 +43,12 @@ export const Wrapper = styled.div`
   background: white;
   width: ${({ align }) => (align ? '300px' : '100%')};
   border: 1px solid #e5e5e5;
+  @media (max-width: 1900px) {
+    order: ${getOrder};
+    flex: 1;
+    width: 100%;
+    display: ${({ order }) => order === 'third' && 'none'};
+  }
 `;
 
 export const Plus = styled(plus)`
@@ -74,6 +108,14 @@ export const Toggle = styled.div`
   padding: 6px;
   background: #edeff3;
   border-radius: 24px;
+`;
+
+export const ToggleClone = styled(Toggle)`
+  display: none;
+  @media (max-width: 1900px) {
+    display: flex;
+    margin-left: auto;
+  }
 `;
 
 export const MenuV = styled(menuV)`
