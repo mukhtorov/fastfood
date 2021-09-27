@@ -9,6 +9,8 @@ export const Container = styled.div`
   height: 100vh;
   padding: 28px 0 40px 0;
   background: white;
+  position: sticky;
+  top: 0;
 `;
 
 export const LogoWrapper = styled.div`

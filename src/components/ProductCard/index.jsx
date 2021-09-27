@@ -1,39 +1,59 @@
 import React, { useState } from 'react';
-import { Container, IconWrapper, Info, Timer, Wrapper } from './style';
+import Done from '../Generic/Done';
+import Cancel from '../Generic/Cancel';
+import { Container, Footer, IconWrapper, Info, Timer, Wrapper } from './style';
 
-export const ProductCard = () => {
+export const ProductCard = ({ value }) => {
+  console.log(value.time.getHours());
   return (
     <Container>
       <Wrapper>
-        <Info.OrderID>12345</Info.OrderID>
+        <Info.OrderID>{value.orderId}</Info.OrderID>
         <IconWrapper>
           <Info.Save />
         </IconWrapper>
         <Timer>
           <Info.Clock />
-          <Info.Text>00:22</Info.Text>
+          <Info.Text>{`${value.time.getHours()}: ${value.time.getMinutes()}`}</Info.Text>
         </Timer>
       </Wrapper>
       <Wrapper flex>
         <Info>
           <Info.User />
           <div>
-            <Info.Name>Sardorbek Mukhtorov</Info.Name>
-            <Info.Nuber>+998 (99) 123 45 67</Info.Nuber>
+            <Info.Name>{value.user.name}</Info.Name>
+            <Info.Nuber>{value.user.phone}</Info.Nuber>
           </div>
         </Info>
-        <Info>
+        <Info center>
           <div>
-            <Info.Total>Umumiy Summa</Info.Total>
-            <Info.Price>40,000 UZS</Info.Price>
+            <Info.Total top>Umumiy Summa</Info.Total>
+            <Info.Price>{value.total} UZS</Info.Price>
           </div>
-          <Info end>
+          <Info end={'true'}>
             <Info.PaymeIcon />
             <Info.Payme>Payme</Info.Payme>
           </Info>
         </Info>
       </Wrapper>
-      <Wrapper></Wrapper>
+      <Wrapper flex last>
+        <Footer>
+          <div>
+            <Info.Total>Operator</Info.Total>
+            <Info.Name>{value.operator.name}</Info.Name>
+          </div>
+          <Cancel />
+        </Footer>
+        <Footer>
+          <div>
+            <Info.Total>Filiall</Info.Total>
+            <Info.Name>
+              {value.filial.title} <br /> {value.filial.location}
+            </Info.Name>
+          </div>
+          <Done />
+        </Footer>
+      </Wrapper>
     </Container>
   );
 };

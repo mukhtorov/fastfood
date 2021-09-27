@@ -8,26 +8,32 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   background: #ffffff;
-  box-shadow: 0px 20px 25px rgba(176, 177, 181, 0.432802);
   border-radius: 6px;
   width: 100%;
-  height: 400px;
+  min-height: 400px;
+  max-height: fit-content;
   padding: 0 20px 20px 20px;
+  margin-bottom: 8px;
+  transition: all 0.3s;
+  :hover {
+    box-shadow: 0px 20px 25px rgba(176, 177, 181, 0.432802);
+  }
 `;
 
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: ${({ flex }) => flex && 'column'};
   width: 100%;
-  padding-bottom: 25px;
+  padding-bottom: ${({ last }) => !last && '25px'};
+
   padding-top: 25px;
-  border-bottom: 1px solid #d9d7d7; ;
+  border-bottom: ${({ last }) => !last && '1px solid #d9d7d7'}; ;
 `;
 
 export const Info = styled.div`
   display: flex;
   margin-left: ${({ end }) => end && 'auto'};
-  align-items: center;
+  align-items: ${({ center }) => center && 'center'};
 `;
 
 Info.OrderID = styled.div`
@@ -118,6 +124,7 @@ Info.Total = styled.div`
   line-height: 18px;
   letter-spacing: 0.366667px;
   color: #8d9ba8;
+  margin-top: ${({ top }) => top && '20px'};
   margin-bottom: 5px;
 `;
 
@@ -148,4 +155,12 @@ Info.Payme = styled.div`
   margin-left: 12px;
   letter-spacing: 0.466667px;
   color: #2d3a45;
+`;
+
+export const Footer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 15px;
 `;

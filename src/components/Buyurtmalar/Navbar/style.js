@@ -30,6 +30,10 @@ const getFlex = ({ order }) => {
 };
 export const Container = styled.div`
   display: flex;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 999;
   @media (max-width: 1900px) {
     flex-direction: column;
   }
