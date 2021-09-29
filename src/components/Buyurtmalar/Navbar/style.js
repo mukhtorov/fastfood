@@ -16,18 +16,6 @@ const getOrder = ({ order }) => {
   }
 };
 
-const getFlex = ({ order }) => {
-  switch (order) {
-    case 'first':
-      return 1;
-    case 'second':
-      return 1;
-    case 'third':
-      return 2;
-    default:
-      return 1;
-  }
-};
 export const Container = styled.div`
   display: flex;
   position: sticky;
@@ -83,6 +71,9 @@ export const Tab = styled.div`
   border-radius: 24px;
   align-items: center;
   justify-content: space-around;
+
+  opacity: ${({ active }) => !active && 0.4};
+  cursor: ${({ active }) => !active && 'not-allowed'};
 `;
 
 Tab.Item = styled.div`
@@ -125,10 +116,12 @@ export const ToggleClone = styled(Toggle)`
 export const MenuV = styled(menuV)`
   width: 14px;
   height: 14px;
+  fill: ${({ active }) => (active ? '#8d9ba8' : 'transparent')};
 `;
 export const MenuH = styled(menuH)`
   width: 14px;
   height: 14px;
+  fill: ${({ active }) => (active ? '#8d9ba8' : 'transparent')};
 `;
 
 export const IconsWrapper = styled.div`

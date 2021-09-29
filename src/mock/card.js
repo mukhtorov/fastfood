@@ -2,6 +2,7 @@ export const card = {
   yangi: [
     {
       id: 1,
+      categoria: 'yangi',
       orderId: 1234,
       time: new Date(),
       total: '40000',
@@ -20,6 +21,8 @@ export const card = {
     {
       id: 2,
       orderId: 56789,
+      categoria: 'yangi',
+
       time: new Date(),
       total: '40000',
       user: {
@@ -36,6 +39,8 @@ export const card = {
     },
     {
       id: 3,
+      categoria: 'yangi',
+
       orderId: 56789,
       time: new Date(),
       total: '40000',
@@ -55,6 +60,8 @@ export const card = {
   qabul: [
     {
       id: 21,
+      categoria: 'qabul',
+
       orderId: 1234,
       time: new Date(),
       total: '40000',
@@ -72,6 +79,8 @@ export const card = {
     },
     {
       id: 22,
+      categoria: 'qabul',
+
       orderId: 56789,
       time: new Date(),
       total: '40000',
@@ -91,6 +100,8 @@ export const card = {
   jonatilgan: [
     {
       id: 31,
+      categoria: 'jonatilgan',
+
       orderId: 1234,
       time: new Date(),
       total: '40000',
@@ -110,6 +121,8 @@ export const card = {
   yopilgan: [
     {
       id: 41,
+      categoria: 'yopilgan',
+
       orderId: 1234,
       time: new Date(),
       total: '40000',
@@ -127,6 +140,8 @@ export const card = {
     },
     {
       id: 42,
+      categoria: 'yopilgan',
+
       orderId: 56789,
       time: new Date(),
       total: '40000',
