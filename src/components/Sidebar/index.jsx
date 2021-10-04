@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   activeStyle,
   Container,
@@ -12,8 +12,34 @@ import {
 import logo from '../../assets/imgs/logo.png';
 import { sidebar } from '../../utils/sidebar';
 import { ReactComponent as Chiqish } from '../../assets/icons/logout.svg';
+import { Menu } from 'antd';
+import {
+  AppstoreOutlined,
+  MailOutlined,
+  SettingOutlined,
+} from '@ant-design/icons';
+import 'antd/dist/antd.css';
+
+const { SubMenu } = Menu;
 
 export const Sidebar = () => {
+  const [state, setState] = useState({
+    theme: 'dark',
+    current: '1',
+  });
+
+  const changeTheme = (value) => {
+    setState({
+      theme: value ? 'dark' : 'light',
+    });
+  };
+
+  const handleClick = (e) => {
+    console.log('click ', e);
+    setState({
+      current: e.key,
+    });
+  };
   return (
     <Container>
       <LogoWrapper>

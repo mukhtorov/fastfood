@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { MainContext } from './context';
 import './index.css';
 import Root from './root';
+import 'antd/dist/antd.css';
 
 ReactDOM.render(
   <React.StrictMode>
